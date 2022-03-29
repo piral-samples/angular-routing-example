@@ -1,0 +1,1 @@
+[{"name":"first-pilet","version":"1.0.0","link":"./first-pilet/index.js","spec":"v2","requireRef":"webpackChunkpr_firstpilet","dependencies":{}},{"name":"second-pilet","version":"1.0.0","link":"./second-pilet/index.js","spec":"v2","requireRef":"webpackChunkpr_secondpilet","dependencies":{}}]
