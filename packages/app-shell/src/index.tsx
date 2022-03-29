@@ -24,9 +24,7 @@ const instance = createInstance({
   },
   plugins: [createNgApi(), ...createStandardApi()],
   requestPilets() {
-    return fetch('./pilets.json')
-      .then((res) => res.json())
-      .then((res) => res.items);
+    return fetch("./pilets.json").then((res) => res.json());
   },
 });
 
