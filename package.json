@@ -1,0 +1,32 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn watch:all",
+    "postinstall": "lerna run declaration && ngcc",
+    "ci:release": "piral build packages/app-shell/src/index.html --type release && pilet build 'packages/*-pilet' --type manifest",
+    "add:pilet": "pilet new app-shell --target packages/${name:-x}-pilet --no-install",
+    "upgrade:pilet": "pilet upgrade --target packages/${name:-x}-pilet",
+    "watch:all": "pilet debug 'packages/*-pilet/src/index.tsx'",
+    "watch:piral": "piral debug packages/app-shell/src/index.html",
+    "build:piral": "piral build packages/app-shell/src/index.html",
+    "build:pilet": "pilet build packages/${name:-x}-pilet/src/index.tsx"
+  },
+  "devDependencies": {
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "@types/react-router": "^5",
+    "@types/react-router-dom": "^5",
+    "@types/node": "^12",
+    "copy-webpack-plugin": "^10.0.0",
+    "html-loader": "^3.1.0",
+    "lerna": "^3.13.0",
+    "piral-cli": "next",
+    "piral-cli-webpack5": "next",
+    "to-string-loader": "^1.2.0",
+    "typescript": "latest"
+  }
+}
